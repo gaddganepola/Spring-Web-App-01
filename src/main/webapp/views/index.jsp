@@ -12,6 +12,10 @@
       <input type="number" name="num2" id="num2" placeholder="Second number" required />
       <button type="submit">Submit</button>
     </form>
+
+    <form action="/alien">
+        <button type="submit">Add Alien</button>
+    </form>
   </div>
 </body>
 </html>

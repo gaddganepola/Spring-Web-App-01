@@ -67,4 +67,22 @@ public class HomeController {
 //        req.setAttribute("result", result);
 //        return "add.jsp";
 //    }
+
+    @RequestMapping("alien")
+    public String getAlien() {
+        return "alien";
+    }
+
+    @RequestMapping("addAlien")
+    public ModelAndView addAlien(int aid, String aname, ModelAndView mv) {
+        Alien alien = new Alien();
+        alien.setAid(aid);
+        alien.setAname(aname);
+
+        mv.addObject("alien", alien);
+        mv.setViewName("welcomeAlien");
+
+        return mv;
+    }
+
 }
