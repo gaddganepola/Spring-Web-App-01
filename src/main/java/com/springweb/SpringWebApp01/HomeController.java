@@ -12,7 +12,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-        return "index.jsp";
+        return "index";
     }
 
 //    @RequestMapping("add")
@@ -34,12 +34,20 @@ public class HomeController {
 //    }
 
 //    Use Model object instead of using session
-    @RequestMapping("add")
-    public String add(@RequestParam("num1") int num, int num2, Model model) {
-        int result= num + num2;
-        model.addAttribute("result", result);
-        return "add.jsp";
-    }
+//    @RequestMapping("add")
+//    public String add(@RequestParam("num1") int num, int num2, Model model) {
+//        int result= num + num2;
+//        model.addAttribute("result", result);
+//        return "add.jsp";
+//    }
+
+//    Remove the extension
+@RequestMapping("add")
+public String add(@RequestParam("num1") int num, int num2, Model model) {
+    int result= num + num2;
+    model.addAttribute("result", result);
+    return "add";
+}
 
 //    It also supports without session
 //    @RequestMapping("add")
