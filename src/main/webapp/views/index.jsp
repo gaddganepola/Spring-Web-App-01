@@ -16,6 +16,8 @@
     <form action="/alien">
         <button type="submit">Add Alien</button>
     </form>
+
+    <p>Welcome to the ${course} course</p>
   </div>
 </body>
 </html>

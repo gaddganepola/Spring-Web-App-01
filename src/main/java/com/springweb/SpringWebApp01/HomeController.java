@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -73,16 +74,36 @@ public class HomeController {
         return "alien";
     }
 
+//    @RequestMapping("addAlien")
+//    public ModelAndView addAlien(int aid, String aname, ModelAndView mv) {
+//        Alien alien = new Alien();
+//        alien.setAid(aid);
+//        alien.setAname(aname);
+//
+//        mv.addObject("alien", alien);
+//        mv.setViewName("welcomeAlien");
+//
+//        return mv;
+//    }
+
+//    Use Model Attribute to assign request values to the object directly
+//    @RequestMapping("addAlien")
+//    public ModelAndView addAlien(@ModelAttribute Alien alien, ModelAndView mv) {
+//
+//        mv.addObject("alien", alien);
+//        mv.setViewName("welcomeAlien");
+//
+//        return mv;
+//    }
+
+//    Remove model and view
     @RequestMapping("addAlien")
-    public ModelAndView addAlien(int aid, String aname, ModelAndView mv) {
-        Alien alien = new Alien();
-        alien.setAid(aid);
-        alien.setAname(aname);
-
-        mv.addObject("alien", alien);
-        mv.setViewName("welcomeAlien");
-
-        return mv;
+    public String addAlien(Alien alien) {
+        return "welcomeAlien";
     }
 
+    @ModelAttribute("course")
+    public String course() {
+        return "Java";
+    }
 }
